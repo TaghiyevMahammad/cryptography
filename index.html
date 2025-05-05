@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encryption - Decryption</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Encryption - Decryption</h1>
+  <div class="container">
+    <div class="panel">
+      <h2 id="controlsHeader">Controls</h2>
+      <label id="uploadLabel">Upload Text File</label>
+      <input type="file" id="fileInput" accept=".txt">
+
+      <label id="cipherMethodLabel">Cipher Method</label>
+      <select id="cipherMethod">
+        <option value="caesar">Caesar Cipher</option>
+        <option value="reverse">Reverse Cipher</option>
+        <option value="atbash">Atbash Cipher</option>
+        <option value="base64">Base64</option>
+      </select>
+
+      <div id="shiftContainer">
+        <label id="shiftLabel">Shift Value</label>
+        <input type="number" id="shift" value="3">
+      </div>
+
+      <label id="languageLabel">Interface Language</label>
+      <select id="languageSelector" onchange="changeLanguage()">
+        <option value="en">English</option>
+        <option value="az">Azərbaycan</option>
+        <option value="tr">Türkçe</option>
+        <option value="ru">Русский</option>
+      </select>
+
+      <div class="button-row">
+        <button class="encrypt-btn" onclick="encryptText()">Encrypt</button>
+        <button class="decrypt-btn" onclick="decryptText()">Decrypt</button>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2 id="textProcessingHeader">Text Processing</h2>
+      <div class="text-area-section">
+        <textarea id="inputText" placeholder="Enter text to encrypt or decrypt..."></textarea>
+        <textarea id="outputText" placeholder="Result will appear here..." readonly></textarea>
+      </div>
+      <button class="download-btn" id="downloadBtn" onclick="downloadResult()">Download Result</button>
+      <button class="reload-btn" id="reloadBtn" onclick="reloadPage()">Reload</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
